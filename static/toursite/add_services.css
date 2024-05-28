@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* Стилі для форм додавання об'єктів */
+/* Заголовок форми */
+.form-title {
+  font-size: 24px;
+  margin-bottom: 20px; }
+
+/* Стилі для полів введення */
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px; }
+
+/* Стилі для вибіркових списків */
+.select-field {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+  /* Світло-сірий колір */ }
+
+/* Стилі для кнопок збереження */
+.save-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  /* Синій колір */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; }
+
+.save-btn:hover {
+  background-color: #0056b3;
+  /* Темніший синій колір при наведенні */ }
+
+/* Стилі для загального контейнера форми */
+.form-container {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  /* Світло-сірий колір */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); }
+
+/* Стилі для заголовка форми */
+.form-header {
+  text-align: center;
+  margin-bottom: 20px; }
+
+/*# sourceMappingURL=add_services.css.map */

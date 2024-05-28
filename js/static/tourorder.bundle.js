@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(function(){var t=document.getElementById("num_people"),e=document.getElementById("cost_display");t.addEventListener("change",(function(){var t=parseInt(this.value);if(!isNaN(t)&&t>0){var n=t*parseInt(e.dataset.cost);e.textContent="До сплати: "+n+" ₴"}else e.textContent="До сплати: "+parseInt(e.dataset.cost)+" ₴"}))}));

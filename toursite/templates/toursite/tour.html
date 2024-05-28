@@ -1,0 +1,24 @@
+{% load static %}
+{% load sass_tags %}
+
+<li>
+    <article class="selection">
+        <div class = "selection_block">
+            <img src="{% static 'toursite/images/' %}{{ tour.tour_image }}" alt="{{ tour.tour_name }}" class = "selection_photo">
+            <div class='post__content'>
+                <h3>{{ tour.tour_name }}</h3>
+                <div class = 'selection_info'>
+                    <h5>Кількість днів: {{tour.num_days}}</h5>
+                    <h5>Автобусний</h5>
+                </div>
+                <p>
+                    {{ tour.description|slice:":200" }}{% if tour.description|length > 200 %}...{% endif %}
+                </p>
+                <h4>Ціна: {{tour.cost}}/людину</h4>
+                <a href="{% url 'tourdetail' tour.slug %}">
+                    <button type="button">Переглянути</button>
+                </a>            
+            </div>
+        </div>
+    </article>
+</li>

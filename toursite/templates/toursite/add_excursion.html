@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Add Excursion
+{% endblock title %}
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src 'toursite\index.scss' %}">
+<link rel="stylesheet" href="{% sass_src 'toursite\add_services.scss' %}">
+
+{% endblock css_files %}
+{% block content %}
+<div class="form-container">
+    <h1 class="form-header">Додати екскурсію</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-field">
+            {{ form.excursion_name.label_tag }}
+            {{ form.excursion_name }}
+        </div>
+        <div class="input-field">
+            {{ form.city.label_tag }}
+            {{ form.city }}
+        </div>
+        <div class="input-field">
+            {{ form.description.label_tag }}
+            {{ form.description }}
+        </div>
+        <div class="input-field">
+            {{ form.cost.label_tag }}
+            {{ form.cost }}
+        </div>
+        <div class="input-field">
+            {{ form.excursion_image.label_tag }}
+            {{ form.excursion_image }}
+        </div>
+        <button type="submit" class="save-btn">Додати</button>
+    </form>
+</div>
+
+{% endblock content %}

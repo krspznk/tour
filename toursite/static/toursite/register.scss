@@ -1,0 +1,78 @@
+/* Стилі для форми реєстрації */
+.content-section {
+    margin: 0 auto; /* Центрування форми */
+}
+
+.register-form {
+    border: 1px solid black;
+    margin: 4%;
+    padding: 10%;
+    border-radius: 10px;
+}
+
+.register-form fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.register-form button[type="submit"] {
+    background-color: #007bff; /* Синій колір кнопки */
+    color: #fff; /* Білий колір тексту кнопки */
+    font-size: 1.5rem; /* Розмір шрифту кнопки */
+    padding: 10px; /* Відступ всередині кнопки */
+    border: none; /* Видалення рамки */
+    border-radius: 5px; /* Закруглення кутів кнопки */
+    cursor: pointer; /* Зміна курсору при наведенні на кнопку */
+    transition: background-color 0.3s; /* Плавний перехід для зміни кольору фону */
+}
+
+.register-form button[type="submit"]:hover {
+    background-color: #0056b3; /* Темніший синій колір кнопки при наведенні */
+}
+
+.register-form .login-link {
+    text-align: left; /* Вирівнювання по лівому краю */
+    margin-top: 10px; /* Відступ зверху */
+}
+
+.register-form .login-link a {
+    text-decoration: none; /* Видалення підкреслення посилання */
+    color: #007bff; /* Синій колір для посилання */
+    padding: 2%; /* Відступи по краях */
+    cursor: pointer; /* Зміна курсору при наведенні */
+}
+
+/* Заголовок форми */
+.register-form h2 {
+    color: #007bff; /* Синій колір для заголовку */
+    font-size: 2rem; /* Розмір шрифту заголовку */
+    margin-top: 0; /* Відступ зверху */
+}
+
+/* Стилі для полів вводу */
+.register-form input[type="text"],
+.register-form input[type="password"] {
+    width: 100%; /* Ширина полів вводу */
+    padding: 10px; /* Відступ всередині полів вводу */
+    margin: 5px 0; /* Відступи зверху та знизу */
+    box-sizing: border-box; /* Загальний розмір полів вводу, включаючи рамку та внутрішній відступ */
+    border: 1px solid #ccc; /* Рамка полів вводу */
+    border-radius: 3px; /* Закруглення кутів полів вводу */
+}
+
+/* Лейбли для полів вводу */
+.register-form label {
+    margin-top: 10px; /* Відступ зверху */
+    display: block; /* Показати як блок елемент */
+    font-weight: bold; /* Жирний шрифт */
+}
+
+/* Стилі для повідомлень про успішність */
+.alert-success {
+    background-color: #28a745; /* Зелений колір для успішних повідомлень */
+    color: white; /* Білий колір тексту */
+    padding: 10px; /* Відступи всередині повідомлення */
+    margin-top: 10px; /* Відступ зверху */
+    border-radius: 5px; /* Закруглення кутів повідомлення */
+}

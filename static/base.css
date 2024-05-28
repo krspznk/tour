@@ -1,0 +1,48 @@
+.logo {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.user {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+.usertext {
+    text-align: center;
+    margin-top: 0px;
+    font-size: 16px;
+    color: #2301C0;
+    margin-left: 50px;
+}
+
+body {
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 350px;
+    margin-top: 20px;
+}
+
+nav a {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #2301C0;
+}
+
+@media (max-width: 900px) {
+    nav{
+    margin-left: 0px;
+    }
+}

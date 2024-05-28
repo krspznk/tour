@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+User Profile
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/user.scss" %}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+{% endblock css_files %}
+
+{% block content %}
+
+    <h1>Привіт, {{ user.username }}!</h1>
+    
+    <h2>Замовлені тури:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Tour</th>
+                <th>Start Date</th>
+                <th>Number of People</th>
+                <th>Status</th>
+                <th>Final Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tour_order in tour_orders %}
+                <tr>
+                    <td>{{ tour_order.id }}</td>
+                    <td>{{ tour_order.tour.tour_name }}</td>
+                    <td>{{ tour_order.start_date }}</td>
+                    <td>{{ tour_order.num_people }}</td>
+                    <td>{{ tour_order.status }}</td>
+                    <td>{{ tour_order.final_cost }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="6">No tour orders found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Замовлені подорожі:</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Transport</th>
+                <th>Hotel</th>
+                <th>Start Date - End Date</th>
+                <th>Number of People</th>
+                <th>Status</th>
+                <th>Final Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.transport }}</td>
+                    <td>{{ order.hotel }}</td>
+                    <td>{{ order.start_date }} - {{ order.end_date }}</td>
+                    <td>{{ order.num_people }}</td>
+                    <td>{{ order.status }}</td>
+                    <td>{{ order.final_cost }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="8">No other orders found.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{% url 'logout' %}" class="logout-btn">Вийти</a>
+{% endblock content %}

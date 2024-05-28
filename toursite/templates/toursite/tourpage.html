@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Tours
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/selectionpage.scss"%}">
+<link rel="stylesheet" href="{% static "toursite/media/selectionpage.css"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/selection.scss"%}">
+<link rel="stylesheet" href="{% static "toursite/media/selection.css"%}">
+{% endblock css_files %}
+
+{% block content %}
+<form method="GET" class = "filter">
+    {{ form.as_p }}
+    <button type="submit">Filter</button>
+</form>
+
+<section id="all">
+    <h2>Всі тури: </h2>
+    <ul>
+        {% for tour in tours %}
+            {% include "toursite/tour.html" %}
+        {% endfor %}
+    </ul>
+</section>
+{% endblock content %}

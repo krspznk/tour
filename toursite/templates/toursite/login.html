@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Travel Easy
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/login.scss" %}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+{% endblock css_files %}
+
+{% block content %}
+
+<div class="content-section col-md-8 col-md-offset-2">
+    <center>
+        <form method="POST" class="login-form">
+            {% csrf_token %}
+            <fieldset>
+                <legend><h2>Login</h2></legend>
+                {{ form|crispy }}
+            </fieldset>
+            <button type="submit"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+            <div class="register-link">
+                <sub><a href="{% url 'register' %}">Don't have an account? Sign up</a></sub>
+            </div>
+        </form>
+    </center>
+</div>
+
+{% endblock content %}

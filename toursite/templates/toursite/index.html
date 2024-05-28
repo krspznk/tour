@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Travel Easy
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src 'toursite\index.scss' %}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+{% endblock css_files %}
+
+{% block content %}
+
+<section class='welcome_section'>
+    <img src="{% static "toursite/images/welcome.jpg"%}" alt="welcome" class = "welcome">
+    <div class = "text">
+        <h2>Ласкаво просимо до TrevelEasy!</h2>
+        <p>Вітаємо вас на платформі, яка зробить ваші мрії про подорожі реальністю. Незалежно від того, чи мрієте ви про спокійний відпочинок на березі моря, захоплюючі екскурсії по культурним пам'яткам, або активний відпочинок у гірських краях — ми маємо все необхідне для того, щоб зробити вашу подорож найяскравішою і незабутньою.</p>
+     </div>
+</section>
+
+<section class="offers_section">
+<h2>Наші пропозиції:</h2>
+<p>Готові тури: Ви можете обрати з нашого каталогу готовий тур, який відповідає вашим потребам та бажанням. Ми пропонуємо різноманітні варіанти - від екскурсій до екзотичних країн до романтичних відпусток на тихих пляжах.</p>
+<p>Складання туру за власними уподобаннями: Якщо ви мрієте про унікальну подорож, ви можете самостійно обрати готель, транспорт та екскурсії, щоб створити свою ідеальну мандрівку. Наш сайт надає всю необхідну інформацію для зручного та швидкого планування.</p>
+<button href="{% url 'tourpage' %}" type="submit">Готові тури</button>
+<button href="{% url 'transportpage' %}" type="submit">Власні тури</button>
+</section>
+
+{% endblock content %}

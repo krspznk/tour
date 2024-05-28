@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Order</title>
+</head>
+<body>
+    <h1>Add New Order</h1>
+    <button onclick="location.href='{% url 'admin:add_transport' %}'">Add Transport</button>
+    <button onclick="location.href='{% url 'admin:add_hotel' %}'">Add Hotel</button>
+    <button onclick="location.href='{% url 'admin:add_excursion' %}'">Add Excursion</button>
+    <button onclick="location.href='{% url 'admin:add_tour' %}'">Add Tour</button>
+</body>
+</html>

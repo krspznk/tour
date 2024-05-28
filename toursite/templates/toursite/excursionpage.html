@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Excursion
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/selectionpage.scss"%}">
+<link rel="stylesheet" href="{% static "toursite/media/selectionpage.css"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/selection.scss"%}">
+<link rel="stylesheet" href="{% static "toursite/media/selection.css"%}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+{% endblock css_files %}
+
+
+{% block content %}
+<form method="GET" class = "filter">
+    {{ form.as_p }}
+    <button type="submit">Filter</button>
+</form>
+<p class = "data">Ви вже обрали: {{transport.get_transport_type_display}} {{transport.departure_city}} - {{transport.arrival_city}}</p>
+<p class = "data">Готель: {{hotel.hotel_name}}</p>
+{% if user_excursion %}
+    <p class = "data">Вибрані екскурсії: 
+        {% for excursion in user_excursion %}
+            {{ excursion.excursion_name }}
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+{% endif %}
+
+
+<section id="all">
+    <h2>Всі готелі в місті {{transport.arrival_city}} : </h2>
+    <ul>
+        {% for excursion in excursions %}
+            {% include "toursite/excursion.html" %}
+        {% endfor %}
+    </ul>
+</section>
+{% endblock content %}

@@ -1,0 +1,58 @@
+.filter{
+    display: flex;
+    font-size: 16px;
+    margin-top: 10px;
+    p{
+        margin-left: 40px;
+        margin-top: 5px;
+        display: flex;
+        margin-top: 0;
+        color: #712A00;
+
+    }
+
+
+    button{
+        margin-right: 20px;
+        margin-left: auto;
+        width: 90px;
+        height: 30px;
+        background-color: #A30D0D;
+        border: none;
+        color: #FFF0F3;
+        cursor: pointer;
+    }
+}
+
+
+.filter input[type="text"],
+.filter input[type="number"],
+.filter select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    box-sizing: border-box; 
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-top: 0;
+}
+
+.filter label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+
+
+ul{
+    list-style-type: none;
+}
+
+#all-tours h2{
+    color: #712A00;
+    font-size: 36px;
+    margin-top: 0px;
+    margin-bottom: 0;
+}

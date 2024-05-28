@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Orders
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src 'toursite\index.scss' %}">
+<link rel="stylesheet" href="{% sass_src 'toursite\orders.scss' %}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+
+{% endblock css_files %}
+
+{% block content %}
+    <a href="{% url 'all_services' %}" class="view-services-btn">Переглянути всі послуги</a>
+
+    <h1>Поїздки</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Користувач</th>
+                <th>Дата</th>
+                <th>Кількість людей</th>
+                <th>Транспорт</th>
+                <th>Готель</th>
+                <th>Екскурсії</th>
+                <th>Вартість</th>
+                <th>Змінити статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order.user }}</td>
+                <td>{{ order.start_date }} - {{ order.end_date }}</td>
+                <td>{{ order.num_people }}</td>
+                <td>{{ order.transport }}</td>
+                <td>{{ order.hotel }}</td>
+                <td>
+                    <ul>
+                        {% for excursion in order.excursions.all %}
+                        <p>{{ excursion }}</p>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>
+                <td>{{ order.final_cost }}</td>
+
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="order_id" value="{{ order.id }}">
+                        <select name="status">
+                            <option value="NEW" {% if order.status == "NEW" %}selected{% endif %}>Нове</option>
+                            <option value="PROCESSED" {% if order.status == "PROCESSED" %}selected{% endif %}>Оброблене</option>
+                            <option value="COMPLETED" {% if order.status == "COMPLETED" %}selected{% endif %}>Завершене</option>
+                        </select>
+                        <input type="submit" class="save-btn" value="Зберегти">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h1>Тури</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Користувач</th>
+                <th>Назва туру</th>
+                <th>Дата</th>
+                <th>Кількість людей</th>
+                <th>Вартість</th>
+                <th>Змінити статус</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tour_order in tour_orders %}
+            <tr>
+                <td>{{ tour_order.user }}</td>
+                <td>{{ tour_order.tour }}</td>
+                <td>{{ tour_order.start_date }}</td>
+                <td>{{ tour_order.num_people }}</td>
+                <td>{{ tour_order.final_cost }}</td>
+
+                <td>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input type="hidden" name="order_id" value="{{ tour_order.id }}">
+                        <select name="status">
+                            <option value="NEW" {% if tour_order.status == "NEW" %}selected{% endif %}>Нове</option>
+                            <option value="PROCESSED" {% if tour_order.status == "PROCESSED" %}selected{% endif %}>Оброблене</option>
+                            <option value="COMPLETED" {% if tour_order.status == "COMPLETED" %}selected{% endif %}>Завершене</option>
+                        </select>
+                        <input type="submit" class="save-btn" value="Зберегти">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endblock content %}
+

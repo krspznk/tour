@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+{{hotel.name}}
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/selectionpage.scss"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/media/selectionpage.css"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/selectiondetails.scss"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/media/selectiondetails.css"%}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+
+{% endblock css_files %}
+
+{% block content %}
+<section id="details">
+    <div class= "first_part">
+        <img src="{% static 'toursite/images/' %}{{ hotel.hotel_image }}" alt="{{ hotel.hotel_name }}" class = "details_photo">
+        <div class = "content">
+
+        <h2>{{ hotel.hotel_name }}</h2>
+        <h3>Деталі:</h3>
+        <h5>Рейтинг: {{hotel.rating}}</h5>
+        <h5>Адреса: {{hotel.address}}</h5>
+        <h4>Ціна: {{hotel.cost}}/людину</h4>
+        <form action="{% url 'excursionpage' %}" method="GET">
+            <input type="hidden" name="hotel_slug" value="{{ hotel.slug }}">
+            <button type="submit">Обрати</button>
+        </form>        
+    </div>
+        
+    </div>
+    <div class='details_content'>
+        <h3>Опис:</h3>
+        <h4>{{ hotel.hotel_name}}</h4>
+        <p>{{ hotel.description}}</p>
+    </div>
+</section>
+
+{% endblock content %}

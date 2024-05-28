@@ -1,0 +1,40 @@
+.tour_photo {
+  width: 300px; }
+
+.tour .tour_block {
+  display: flex;
+  padding: 20px; }
+
+.tour .post__content {
+  color: #712A00;
+  margin-left: 20px;
+  margin-right: 20px; }
+  .tour .post__content h3 {
+    font-size: 28px;
+    margin-top: 0px;
+    margin-bottom: 0; }
+  .tour .post__content p {
+    font-size: 20px; }
+  .tour .post__content h4 {
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 0; }
+  .tour .post__content button {
+    margin-top: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: #A30D0D;
+    border: none;
+    color: #FFF0F3;
+    font-size: 22px;
+    cursor: pointer; }
+  .tour .post__content .tour_info {
+    margin-right: 50px;
+    display: flex; }
+    .tour .post__content .tour_info h5 {
+      padding: 0 20px 0 0;
+      margin-bottom: 0;
+      margin-top: 10px;
+      font-size: 14px; }
+
+/*# sourceMappingURL=tour.css.map */

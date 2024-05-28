@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Tours
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src 'toursite\index.scss' %}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+{% endblock css_files %}
+
+{% block content %}
+<p>Дякую, що обрали нас, незабаром наші менеджери з вами зв'яжуться</p>
+{% endblock content %}

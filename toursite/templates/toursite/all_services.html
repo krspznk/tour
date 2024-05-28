@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+All services
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src 'toursite\index.scss' %}">
+<link rel="stylesheet" href="{% sass_src 'toursite\orders.scss' %}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+{% endblock css_files %}
+
+{% block content %}
+    <h1>Всі послуги</h1>
+
+    <h2>Транспорт</h2>
+    <a href="{% url 'add_transport' %}" class="add-btn">+</a>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Відправлення</th>
+                <th>Прибуття</th>
+                <th>Тип</th>
+                <th>Вартість</th>
+                <th>Дія</th> <!-- Add a column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for transport in transports %}
+            <tr>
+                <td>{{ transport.departure_city }}</td>
+                <td>{{ transport.arrival_city }}</td>
+                <td>{{ transport.transport_type }}</td>
+                <td>{{ transport.cost }}</td>
+                <td><a href="{% url 'delete_transport' transport.id %}" class="delete-btn">Видалити</a></td> <!-- Add a delete button -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Готелі</h2>
+    <a href="{% url 'add_hotel' %}" class="add-btn">+</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Назва готелю</th>
+                <th>Місто</th>
+                <th>Адреса</th>
+                <th>Рейтинг</th>
+                <th>Вартість</th>
+                <th>Дія</th> <!-- Add a column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for hotel in hotels %}
+            <tr>
+                <td>{{ hotel.hotel_name }}</td>
+                <td>{{ hotel.city }}</td>
+                <td>{{ hotel.address }}</td>
+                <td>{{ hotel.rating }}</td>
+                <td>{{ hotel.cost }}</td>
+                <td><a href="{% url 'delete_hotel' hotel.id %}" class="delete-btn">Видалити</a></td> <!-- Add a delete button -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Екскурсії</h2>
+    <a href="{% url 'add_excursion' %}" class="add-btn">+</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Назва</th>
+                <th>Місто</th>
+                <th>Вартість</th>
+                <th>Дія</th> <!-- Add a column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for excursion in excursions %}
+            <tr>
+                <td>{{ excursion.excursion_name }}</td>
+                <td>{{ excursion.city }}</td>
+                <td>{{ excursion.cost }}</td>
+                <td><a href="{% url 'delete_excursion' excursion.id %}" class="delete-btn">Видалити</a></td> <!-- Add a delete button -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Тури</h2>
+    <a href="{% url 'add_tour' %}" class="add-btn">+</a>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Назва туру</th>
+                <th>Транспорт</th>
+                <th>Готель</th>
+                <th>Екскурсії</th>
+                <th>Кількість днів</th>
+                <th>Вартість</th>
+                <th>Дія</th> <!-- Add a column for actions -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for tour in tours %}
+            <tr>
+                <td>{{ tour.tour_name }}</td>
+                <td>{{ tour.transport }}</td>
+                <td>{{ tour.hotel }}</td>
+                <td>
+                    <ul>
+                        {% for excursion in tour.excursions.all %}
+                        <li>{{ excursion }}</li>
+                        {% endfor %}
+                    </ul>
+                </td>
+                <td>{{ tour.num_days }}</td>
+                <td>{{ tour.cost }}</td>
+                <td><a href="{% url 'delete_tour' tour.id %}" class="delete-btn">Видалити</a></td> <!-- Add a delete button -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}

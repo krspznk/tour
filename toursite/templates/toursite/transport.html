@@ -1,0 +1,21 @@
+{% load static %}
+
+<li>
+    <article class="selection">
+        <div class = "selection_block">
+            <img src="{% static 'toursite/images/' %}{{ transport.transport_image }}" alt="{{ transport.transport_name }}" class = "selection_photo">
+            <div class='post__content'>
+                <h3>{{ transport.get_transport_type_display }}</h3>
+                <div class = 'selection_info'>
+                    <h5>Місто відправлення: {{transport.departure_city}}</h5>
+                    <h5>Місто прибуття: {{transport.arrival_city}}</h5>
+                </div>
+                <h4>Ціна: {{transport.cost}}/людину</h4>
+                <form action="{% url 'hotelpage' %}" method="GET">
+                    <input type="hidden" name="transport_slug" value="{{ transport.slug }}">
+                    <button type="submit">Обрати</button>
+                </form>
+            </div>
+        </div>
+    </article>
+</li>

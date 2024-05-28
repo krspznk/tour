@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Замовлення
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/order.scss" %}">
+{% endblock css_files %}
+
+{% block content %}
+<section id="order">
+    <h1>{{ user.first_name }}, раді, що ви вирішили скористатися нашими послугами.</h1>
+    <h2>Ви хочете оформити заявку на тур: {{ tour.tour_name }}</h2>
+    <h2>Залишилося лише уточнити деталі</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class = "inputdata">
+            <label for="start_date">Дата початку:</label>
+            <input type="date" id="start_date" name="start_date" min="{{ today }}" required> 
+        </div>
+        <div class = "inputdata">
+            <label for="num_people">Кількість людей:</label>
+            <input type="number" id="num_people" name="num_people" min="1" required>    
+        </div>
+        <h2 class="cost" id="tour_cost" data-cost="{{ tour.cost }}">До сплати: {{ tour.cost }} ₴</h2>
+        <button type="submit">Підтвердити </button>
+    </form>
+
+</section>
+
+<script src="{% static "toursite/js/tourorder.bundle.js" %}"></script>
+
+{% endblock content %}

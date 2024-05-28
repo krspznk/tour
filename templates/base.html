@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static "../static/base.css" %}">
+    {% block css_files %}{% endblock css_files %}
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}">
+            <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="logo">
+        </a>        <nav>
+            <a href="{% url 'tourpage' %}">Готові тури</a>
+            <a href="{% url 'transportpage' %}">Власні тури</a>
+            <a href="">Задати питання</a>
+        </nav>
+        
+        {% if user.is_authenticated %}
+            {% if user.is_superuser %}
+                <a href="{% url 'orders' %}">
+                    <img src="{% static 'images/user.png' %}" alt="User Profile" class="user">
+                    <p class="usertext">admin</p>
+                </a>
+            {% else %}
+                <a href="{% url 'user_profile' %}">
+                    <img src="{% static 'images/user.png' %}" alt="User Profile" class="user">
+                    <p class="usertext">{{ user.username }}</p>
+                </a>
+    {% endif %}
+        {% else %}
+        <a href="{% url 'login' %}">
+            <img src="{% static 'images/user.png' %}" alt="User Profile" class="user">
+        </a>
+        {% endif %}
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Замовлення
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/order.scss" %}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+{% endblock css_files %}
+
+{% block content %}
+<section id="order">
+    <h1>{{ user.first_name }}, раді, що ви вирішили скористатися нашими послугами.</h1>
+    <h2>Ви хочете оформити заявку на пакет з наступних послуг:</h2>
+    <p>Транспорт: {{ transport.get_transport_type_display }} {{ transport.departure_city }} - {{ transport.arrival_city }}</p>
+    <p>Готель: {{ hotel.hotel_name }}</p>
+    {% if excursions %}
+    <p>Екскурсії:
+        {% for excursion in excursions %}
+            {{ excursion.excursion_name }}
+            {% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+    {% endif %}
+
+    <h2>Залишилося лише уточнити деталі</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="inputdata">
+            <label for="start_date">Дата початку:</label>
+            <input type="date" id="start_date" name="start_date" min="{{ today }}" required>
+        </div>
+        <div class="inputdata">
+            <label for="end_date">Дата кінця:</label>
+            <input type="date" id="end_date" name="end_date" min="{{ today }}" required>
+        </div>
+        <div class="inputdata">
+            <label for="num_people">Кількість людей:</label>
+            <input type="number" id="num_people" name="num_people" min="1" required>
+        </div>
+        <h2 class="cost" id="cost_display">До сплати: <span id="final_cost"></span> ₴</h2>
+        <button type="submit">Підтвердити</button>
+    </form>
+</section>
+
+<script id="order_script" src="{% static 'toursite/js/order.bundle.js' %}"  
+    data-transport-cost="{{ transport.cost }}"
+    data-hotel-cost="{{ hotel.cost }}"
+    data-excursion-costs="{% for excursion in excursions %}{{ excursion.cost }}{% if not forloop.last %},{% endif %}{% endfor %}">
+</script>
+
+{% endblock content %}

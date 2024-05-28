@@ -1,0 +1,217 @@
+@media (max-width: 1000px) {
+    .details_photo {
+        width: 500px;
+        height: 375px;
+    }
+
+    .first_part {
+        margin-left: 30px;
+
+        .content {
+            h2 {
+                font-size: 36px;
+            }
+            h3 {
+                font-size: 24px;
+            }
+            h4 {
+                font-size: 18px;
+            }
+            h5 {
+                font-size: 14px;
+            }
+            button {
+                width: 120px;
+                height: 40px;
+                font-size: 16px;
+            }
+            .buttons {
+                button {
+                    width: 150px;
+                    height: 40px;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    .details_content {
+        margin-left: 30px;
+
+        h3 {
+            font-size: 28px;
+        }
+        h4 {
+            font-size: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .first_part .content .buttons {
+        display: contents;
+        margin-top: 10px;
+    }
+
+
+    .details_photo {
+        width: 400px;
+        height: 300px;
+    }
+
+    .first_part {
+        margin-left: 20px;
+
+        .content {
+            h2 {
+                font-size: 32px;
+            }
+            h3 {
+                font-size: 20px;
+            }
+            h4 {
+                font-size: 16px;
+            }
+            h5 {
+                font-size: 12px;
+            }
+            button {
+                width: 100px;
+                height: 35px;
+                font-size: 14px;
+            }
+            .buttons {
+                button {
+                    width: 120px;
+                    height: 35px;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    .details_content {
+        margin-left: 20px;
+
+        h3 {
+            font-size: 24px;
+        }
+        h4 {
+            font-size: 18px;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .first_part .content .buttons {
+        display: flex;
+    }
+    .details_photo {
+        width: 300px;
+        height: 225px;
+        padding: 0 20%
+    }
+
+    .first_part {
+        margin-left: 10px;
+        display: contents;
+        .content {
+            h2 {
+                font-size: 24px;
+            }
+            h3 {
+                font-size: 18px;
+            }
+            h4 {
+                font-size: 14px;
+            }
+            h5 {
+                font-size: 10px;
+            }
+            button {
+                width: 80px;
+                height: 30px;
+                font-size: 12px;
+            }
+            .buttons {
+                button {
+                    width: 100px;
+                    height: 30px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .details_content {
+        margin-left: 10px;
+
+        h3 {
+            font-size: 20px;
+        }
+        h4 {
+            font-size: 16px;
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .details_photo {
+        width: 200px;
+        height: 150px;
+    }
+
+    .first_part {
+        margin-left: 5px;
+
+        .content {
+            h2 {
+                font-size: 20px;
+            }
+            h3 {
+                font-size: 16px;
+            }
+            h4 {
+                font-size: 12px;
+            }
+            h5 {
+                font-size: 8px;
+            }
+            button {
+                width: 70px;
+                height: 25px;
+                font-size: 10px;
+            }
+            .buttons {
+                button {
+                    width: 80px;
+                    height: 25px;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .details_content {
+        margin-left: 5px;
+
+        h3 {
+            font-size: 18px;
+        }
+        h4 {
+            font-size: 14px;
+        }
+        p {
+            font-size: 12px;
+        }
+    }
+}

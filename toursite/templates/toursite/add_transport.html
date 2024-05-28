@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Додати транспорт
+{% endblock title %}
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src 'toursite/index.scss' %}">
+<link rel="stylesheet" href="{% sass_src 'toursite/add_services.scss' %}">
+{% endblock css_files %}
+{% block content %}
+<div class="form-container">
+    <h1 class="form-header">Додати транспорт</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-field">
+            {{ form.departure_city.label_tag }}
+            {{ form.departure_city }}
+        </div>
+        <div class="input-field">
+            {{ form.arrival_city.label_tag }}
+            {{ form.arrival_city }}
+        </div>
+        <div class="select-field">
+            {{ form.transport_type.label_tag }}
+            {{ form.transport_type }}
+        </div>
+        <div class="input-field">
+            {{ form.cost.label_tag }}
+            {{ form.cost }}
+        </div>
+        <div class="input-field">
+            {{ form.transport_image.label_tag }}
+            {{ form.transport_image }}
+        </div>
+        <button type="submit" class="save-btn">Додати</button>
+    </form>
+</div>
+
+{% endblock content %}

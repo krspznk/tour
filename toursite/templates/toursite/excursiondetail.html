@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+{{excursion.name}}
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/selectionpage.scss"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/media/selectionpage.css"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/selectiondetails.scss"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/media/selectiondetails.css"%}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+{% endblock css_files %}
+
+{% block content %}
+<section id="details">
+    <div class= "first_part">
+        <img src="{% static 'toursite/images/' %}{{ excursion.excursion_image }}" alt="{{ excursion.excursion_name }}" class = "excursion_photo">
+        <div class = "content">
+
+        <h2>{{ excursion.excursion_name }}</h2>
+        <h3>Деталі:</h3>
+        <h5>Місто: {{excursion.city}}</h5>
+        <h4>Ціна: {{excursion.cost}}/людину</h4>
+        <div class="buttons">
+            <form action="{% url 'excursionpage' %}" method="GET">
+                <input type="hidden" name="excursion_slug" value="{{ excursion.slug }}">
+                <button type="submit">Обрати</button>
+            </form>    
+            <form action="{% url 'order' %}" method="GET">
+                <input type="hidden" name="excursion_slug" value="{{ excursion.slug }}">
+                <button type="submit">Обрати та перейти до замовлення</button>
+            </form>  
+        </div>
+
+
+    </div>
+        
+    </div>
+    <div class='details_content'>
+        <h3>Опис:</h3>
+        <h4>{{ excursion.excursion_name}}</h4>
+        <p>{{ excursion.description}}</p>
+    </div>
+</section>
+
+{% endblock content %}

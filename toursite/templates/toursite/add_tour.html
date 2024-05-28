@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Add Tour
+{% endblock title %}
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src 'toursite\index.scss' %}">
+<link rel="stylesheet" href="{% sass_src 'toursite\add_services.scss' %}">
+
+{% endblock css_files %}
+{% block content %}
+<div class="form-container">
+    <h1 class="form-header">Додати тур</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="input-field">
+            {{ form.tour_name.label_tag }}
+            {{ form.tour_name }}
+        </div>
+        <div class="input-field">
+            {{ form.description.label_tag }}
+            {{ form.description }}
+        </div>
+        <div class="input-field">
+            {{ form.transport.label_tag }}
+            {{ form.transport }}
+        </div>
+        <div class="input-field">
+            {{ form.hotel.label_tag }}
+            {{ form.hotel }}
+        </div>
+        <div class="input-field">
+            {{ form.num_days.label_tag }}
+            {{ form.num_days }}
+        </div>
+        <div class="input-field">
+            {{ form.excursions.label_tag }}
+            {{ form.excursions }}
+        </div>
+        <div class="input-field">
+            {{ form.tour_image.label_tag }}
+            {{ form.tour_image }}
+        </div>
+        <button type="submit" class="save-btn">Додати</button>
+    </form>
+</div>
+{% endblock content %}

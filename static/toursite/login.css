@@ -1,0 +1,78 @@
+@charset "UTF-8";
+/* toursite/login.css */
+/* Стилі для форми входу */
+.content-section {
+  margin: 0 auto;
+  /* Центрування форми */ }
+
+.login-form {
+  border: 1px solid black;
+  margin: 4%;
+  padding: 10%;
+  border-radius: 10px; }
+
+.login-form fieldset {
+  border: none;
+  margin: 0;
+  padding: 0; }
+
+.login-form button[type="submit"] {
+  background-color: #2301C0;
+  /* Пурпурний колір кнопки */
+  color: #fff;
+  /* Білий колір тексту кнопки */
+  font-size: 2rem;
+  padding: 1%;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; }
+
+.login-form button[type="submit"]:hover {
+  background-color: #190084;
+  /* Темніший пурпурний колір кнопки при наведенні */ }
+
+.login-form .register-link {
+  text-align: left;
+  margin-top: 10px; }
+
+.login-form .register-link a {
+  text-decoration: none;
+  color: blue;
+  /* Синій колір для посилання */
+  padding: 2%;
+  cursor: pointer; }
+
+/* Заголовок форми */
+.login-form h2 {
+  color: #2301C0;
+  /* Пурпурний колір для заголовку */
+  font-size: 2rem;
+  margin-top: 0; }
+
+/* Стилі для полів вводу */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 3px; }
+
+/* Лейбли для полів вводу */
+.login-form label {
+  margin-top: 10px;
+  display: block;
+  font-weight: bold; }
+
+/* Стилі для повідомлень про успішність */
+.alert-success {
+  background-color: #4CAF50;
+  /* Зелений колір для успішних повідомлень */
+  color: white;
+  /* Білий колір тексту */
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px; }
+
+/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,117 @@
+@media (max-width: 1400px) {
+    .selection_photo {
+        width: 300px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .selection_photo {
+        width: 200px;
+    }
+}
+
+@media (max-width: 800px) {
+    .selection_photo {
+        width: 150px;
+    }
+
+    .post__content {
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        button {
+            width: 120px;
+            height: 40px;
+            font-size: 18px;
+        }
+
+        .selection_info h5 {
+            font-size: 12px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .selection .post__content h3{
+        font-size: 20px;
+    }
+    .selection .post__content p {
+        display: none;
+    }
+
+    .selection_photo {
+        width: 130px;
+    }
+    .selection .selection_block{
+        padding: 10px;
+    }
+    .selection .post__content button{
+        margin-top : 5px;
+        font-size: 15px;
+        height: 20px;
+        width: 100px;
+    }
+
+    .post__content {
+        h3 {
+            font-size: 20px;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        button {
+            width: 100px;
+            height: 35px;
+            font-size: 16px;
+        }
+
+        .selection_info h5 {
+            font-size: 10px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .selection_photo {
+        width: 100px;
+    }
+
+    .post__content {
+        h3 {
+            font-size: 18px;
+        }
+
+        h4 {
+            font-size: 16px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        button {
+            width: 80px;
+            height: 30px;
+            font-size: 14px;
+        }
+
+        .selection_info h5 {
+            font-size: 8px;
+        }
+    }
+}

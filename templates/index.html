@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Data</title>
+    <script>
+        async function fetchData(apiEndpoint) {
+            try {
+                let response = await fetch(apiEndpoint);
+                let data = await response.json();
+                console.log(`Data from ${apiEndpoint}:`, data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchData('/api/cities/');
+            fetchData('/api/transponts/');
+            fetchData('/api/hotels/');
+            fetchData('/api/excursions/');
+            fetchData('/api/tours/');
+            fetchData('/api/tour-orders/');
+            fetchData('/api/orders/');
+            fetchData('/api/questions/');
+        });
+    </script>
+</head>
+<body>
+    <h1>API Data</h1>
+    <p>Open the console to see the JSON data fetched from the API.</p>
+</body>
+</html>

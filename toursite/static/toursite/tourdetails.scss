@@ -1,0 +1,53 @@
+.tour_photo{
+    width: 600px;
+    height: 450px;
+}
+
+.first_part{
+    margin-left: 50px;
+    display: flex;
+    margin-top: 20px;
+    .content{
+        color: #712A00;
+        margin-left: 20px;
+
+        h2{
+            margin-top: 0;
+            font-size: 42px;
+        }
+        h3{
+            font-size: 28px;
+        }
+        h5{
+            font-size: 16px;
+        }
+        h4{
+            font-size: 20px;
+        }
+        button{
+            font-size: 18px;
+            width: 150px;
+            height: 50px;
+            background-color: #A30D0D;
+            border: none;
+            color: #FFF0F3;
+        }
+
+    }
+}
+
+.tour_content{
+    margin-left: 50px;
+    color: #712A00;
+    h3{
+        text-align: center;
+        font-size: 32px;
+    }
+    h4{
+        text-align: center;
+        font-size: 24px;
+    }
+    p{
+        font-size: 22px;
+    }
+}

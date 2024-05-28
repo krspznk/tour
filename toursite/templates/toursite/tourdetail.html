@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+{{tour.name}}
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{%sass_src "toursite/selectionpage.scss"%}">
+<link rel="stylesheet" href="{%sass_src "toursite/selectiondetails.scss"%}">
+{% endblock css_files %}
+
+{% block content %}
+<section id="details">
+    <div class= "first_part">
+        <img src="{% static 'toursite/images/' %}{{ tour.tour_image }}" alt="{{ tour.tour_name }}" class = "details_photo">
+        <div class = "content">
+
+        <h2>{{ tour.tour_name }}</h2>
+        <h3>Деталі:</h3>
+        <h5>Кількість днів: {{tour.num_days}}</h5>
+        <h5>Автобусний</h5>
+        <h4>Ціна: {{tour.cost}}/людину</h4>
+        <a href="{% url 'tourorder' slug=tour.slug %}">
+            <button type="button">Замовити</button>
+        </a>           
+        </div>
+        
+    </div>
+    <div class='details_content'>
+        <h3>Опис:</h3>
+        <p>{{ tour.description}}</p>
+        <h3>Готель:</h3>
+        <h4>{{ tour.hotel.hotel_name}}</h4>
+        <p>{{ tour.hotel.description}}</p>
+        <h3>Екскурсії:</h3>
+        {% for excursion in tour.excursions.all %}
+            <h4>{{ excursion.excursion_name }}</h4>
+            <p>{{ excursion.description }}</p>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock content %}

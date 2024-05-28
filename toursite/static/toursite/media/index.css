@@ -1,0 +1,175 @@
+@media (max-width: 1000px) {
+    .welcome {
+        width: 400px;
+        margin-left: 30px;
+    }
+
+    .welcome_section .text h2 {
+        font-size: 40px;
+    }
+
+    .welcome_section .text p {
+        font-size: 28px;
+    }
+
+    .offers_section {
+        width: 80%;
+
+        h2 {
+            font-size: 36px;
+        }
+
+        p {
+            font-size: 28px;
+        }
+
+        button {
+            width: 250px;
+            height: 80px;
+            font-size: 32px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+    .welcome {
+        width: 300px;
+        margin-left: 20px;
+    }
+
+    .welcome_section .text h2 {
+        font-size: 30px;
+    }
+
+    .welcome_section .text p {
+        font-size: 24px;
+    }
+
+    .offers_section {
+        width: 90%;
+
+        h2 {
+            font-size: 32px;
+        }
+
+        p {
+            font-size: 24px;
+        }
+
+        button {
+            width: 200px;
+            height: 70px;
+            font-size: 28px;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .welcome {
+        width: 300px;
+        margin-left: 20%;
+    }
+
+    .welcome_section .text h2 {
+        font-size: 20px;
+    }
+    .welcome_section{
+        display: contents;
+    }
+
+    .welcome_section .text p {
+        font-size: 20px;
+    }
+
+    .offers_section {
+        width: 95%;
+        margin-left: 10px;
+        h2 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            width: 150px;
+            height: 60px;
+            font-size: 24px;
+            margin: 30px;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+    .welcome {
+        width: 250px;
+        margin-left:  15%;
+    }
+
+
+    .offers_section {
+        width: 98%;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        button {
+            margin: 20px;
+        }
+    }
+}
+@media (max-width: 800px) {
+
+
+    nav {
+        margin-left: 100px;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        font-size: 20px;
+    }
+    .logo {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+    
+    .user {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        margin-left: 50px;
+    }
+    
+}
+
+
+@media (max-width: 500px) {
+
+
+    nav {
+        margin-left: 10px;
+        margin-top: 10px;
+        justify-content: center;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        font-size: 12px;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    
+}

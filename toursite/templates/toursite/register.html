@@ -1,0 +1,44 @@
+<!-- toursite/register.html -->
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% load sass_tags %}
+
+{% block title %}
+Travel Easy - Register
+{% endblock title %}
+
+{% block css_files %}
+<link rel="stylesheet" href="{% sass_src "toursite/index.scss"%}">
+<link rel="stylesheet" href="{% sass_src "toursite/register.scss"%}">
+<link rel="stylesheet" href="{% static 'toursite\media\index.css' %}">
+
+
+{% endblock css_files %}
+
+{% block content %}
+
+<div>
+    <center>
+        {% if messages %}
+            {% for message in messages %}
+                <div role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    <form method="POST" class="register-form"> <!-- Додав клас register-form -->
+      {% csrf_token %}
+      <fieldset>
+        {{ form|crispy}}
+      </fieldset>
+     <center>
+      <button type="submit"><span ></span>   Register</button>
+    </center>
+    <br/>
+    <sub class="login-link"><a href="{% url 'login' %}">Already have an account? Login</a></sub> <!-- Додав клас login-link -->
+    </form>
+  </center>
+</div>
+{% endblock content %}
