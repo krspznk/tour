@@ -26,9 +26,6 @@ SECRET_KEY = 'django-insecure-=)8bphc$ld#yn%+dils88s&ec(y(w&(u3lb#!#vfdy%*9yhz!s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -151,3 +148,4 @@ STATIC_ROOT = BASE_DIR / "static"
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
 LOGIN_URL = 'login'  # Ваш власний URL для входу
+ALLOWED_HOSTS = ['ec2-13-40-128-108.eu-west-2.compute.amazonaws.com', '127.0.0.1', 'localhost', '0.0.0.0']
